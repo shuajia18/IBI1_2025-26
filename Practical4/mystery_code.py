@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: randomly choose ten numbers form (1,10), while numbers can be the same. count their sum
+# Answer: randomly choose eleven numbers form (1,10), while numbers can be the same. count their sum
 
 # Import libraries
 # randint allows drawing a random number,
@@ -19,6 +19,6 @@ while progress<=10:
 
 print(total_rand)
 
-#answer:is that randomly choose ten numbers form (1,10), while numbers can be the same. count their sum
+#answer:is that randomly choose eleven numbers form (1,10), while numbers can be the same. count their sum
 #result:68 58 68 62 56 66 52
-#hypotheis: the total_rand is near to 65
+#hypotheis: the total_rand is near to 60.5
