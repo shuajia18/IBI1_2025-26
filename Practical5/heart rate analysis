@@ -1,0 +1,35 @@
+heart_rates	=[72,60,126,85,90,59,76,131,88,121,64]
+patient_number=len(heart_rates)
+sum_rates=sum(heart_rates)
+mean_heart_rate=sum_rates/patient_number
+print(f"{patient_number} patients are in dataset")
+print(f"the mean heart rate is {mean_heart_rate}")
+
+low=0
+normal=0
+high=0
+for i in heart_rates:
+    if i<60:
+        low=low+1
+    if i>=60 and i <=120:
+        normal=normal+1
+    if i>120:
+        high=high+1
+print(f"there are {low} measurements from the list fall into low category")
+print(f"there are {normal} measuremnets from the list fall into normal category")
+print(f"there are {high} measurements from the list fall into high category")
+if high>normal and high>low:
+    print("high category contains the largest number of patients")
+elif normal>high and normal>low:
+    print("normal category contains the largests number of patients")
+else:
+    print("low category contains the largests number of patients")
+        
+
+import matplotlib.pyplot as plt
+labels={'low','normal','high'}
+sizes=[low,normal,high]
+explode=(0.1,0,0)
+plt.pie(sizes,explode,labels,autopct='%1.1f%%',shadow=False,startangle=90)
+plt.axis('equal')
+plt.show()

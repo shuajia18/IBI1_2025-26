@@ -1,0 +1,39 @@
+genes={'TP53':12.4,'EGFR':15.1,'BRCA1':8.2,'PTEN':5.3,'ESR1':10.7}
+genes['MYC']=11.6
+print('MYC'in genes)
+
+#import tools
+import numpy as np
+import matplotlib.pyplot as plt
+
+#define x and y lable
+genes_names=list(genes.keys())
+genes_expression=list(genes.values())
+
+#define width
+width=0.35
+
+#draw the bar
+bars=plt.bar(genes_names,genes_expression,width)
+
+#name the bar
+plt.title('gene expression')
+plt.ylabel('expression')
+plt.xlabel('gene')
+
+#show the bar
+plt.show()                      
+
+gene_of_interest='MYC'#here you can input the gene you are interested
+if gene_of_interest in genes:
+    expression=genes[gene_of_interest]
+    print(f"the expression of {gene_of_interest} is {expression}")
+else:
+    print(f"do not have information of {gene_of_interest}")
+
+#caculate the average
+expression_sum=sum(genes_expression)
+gene_count=len(genes_expression)
+average_expression=expression_sum/gene_count
+print(f"the average gene expression level across all genes is {average_expression}")
+

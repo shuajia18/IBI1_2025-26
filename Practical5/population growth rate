@@ -1,0 +1,23 @@
+import numpy as np
+population_2020=np.array([66.7,1426,59.4,208.6,331.6])
+population_2024=np.array([69.2,1410,58.9,212.0,340.1])
+change_number=(population_2024-population_2020)*100/population_2020
+change_number=np.round(change_number,2)
+
+percent_change={'UK':change_number[0],'China':change_number[1],'Italy':change_number[2],'Brazil':change_number[3],'USA':change_number[4]}
+print(f"percentage change of each population is {percent_change}")
+
+change_number_list=list(percent_change.items())
+reversed_change_number= sorted(change_number_list,key=lambda x: x[1], reverse=True)
+print(reversed_change_number)
+
+import numpy as np
+import matplotlib.pyplot as plt
+country=percent_change.keys()
+change_number=change_number
+width=0.35
+chart=plt.bar(country,change_number,width)
+plt.ylabel("chenge percent")
+plt.xlabel("country")
+
+plt.show()
