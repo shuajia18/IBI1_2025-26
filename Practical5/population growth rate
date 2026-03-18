@@ -7,7 +7,7 @@ change_number=np.round(change_number,2)
 percent_change={'UK':change_number[0],'China':change_number[1],'Italy':change_number[2],'Brazil':change_number[3],'USA':change_number[4]}
 print(f"percentage change of each population is {percent_change}")
 
-change_number_list=list(percent_change.items())
+change_number_list=percent_change.items()
 reversed_change_number= sorted(change_number_list,key=lambda x: x[1], reverse=True)
 max_country,max_change=reversed_change_number[0]
 min_country,min_change=reversed_change_number[-1]
