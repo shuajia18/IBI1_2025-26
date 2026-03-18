@@ -9,7 +9,11 @@ print(f"percentage change of each population is {percent_change}")
 
 change_number_list=list(percent_change.items())
 reversed_change_number= sorted(change_number_list,key=lambda x: x[1], reverse=True)
+max_country,max_change=reversed_change_number[0]
+min_country,min_change=reversed_change_number[-1]
 print(reversed_change_number)
+print(f'the {max_country} has largest increase, which is {max_change}')
+print(f'the {min_country} has largest decrease, which is {min_change}')
 
 import numpy as np
 import matplotlib.pyplot as plt
