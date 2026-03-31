@@ -1,0 +1,29 @@
+#read the sequence of genes
+#remove  effect of lines
+#search for genes that meet requirements
+#serach for stop codons found in genes
+#print gene name and stop codons of each gene
+file=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')
+content=file.read()
+file.close()
+
+import re
+genes=re.split('>',content)[1:]
+result=[]
+for gene in genes:
+    lines=re.split('\n',gene)
+    gene_name=lines[0]
+    gene_name=re.split(' ',gene_name)
+    gene_name=gene_name[0]
+    gene_seq_parts=lines[1:]
+    gene_seq=''.join(gene_seq_parts)
+
+    stop=re.findall(r'ATG(?:...)+(TAA|TAG|TGA)',gene_seq)
+    if len(stop)>0:
+        result.append((gene_name,stop))
+out=open('stop_genes.fa.','w')
+for item in result:
+    name=item[0]
+    stop_codons=item[1]
+    out.write(f'>{name} stop_codons:{stop_codons}\n') 
+out.close()
