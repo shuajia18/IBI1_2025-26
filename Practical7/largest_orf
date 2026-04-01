@@ -1,9 +1,22 @@
 seq = 'AAGAUACAUGCAAGUGGUGUGUCUGUUCUGAGAGGGCCUAAAAG' 
-import re
-#get whole RNA sequence
-a=re.findall(r'AUG(?:...)+?(?:UAA|UAG|UGA)',seq)
-print(a)
-a=a[0]#get ORF sequence
-b=len(a)#caculate length
-print('the largest ORF that can be generated from this sequence is',a)
-print('the length of this ORF is',b)
+
+all_orf=[]
+#find every possible AUG
+for i in range(len(seq)):
+    if seq[i:i+3]=='AUG':
+        for j in range(i+3,len(seq),3):
+            codon=seq[j:j+3]
+            if codon=='UAA' or codon=='UAG' or codon=='UGA':
+                orf=seq[i:j+3]
+                all_orf.append(orf)
+
+#find the longest
+longest_orf=all_orf[0]
+for orf in all_orf:
+    if len(orf)>len(longest_orf):
+        longest_orf=orf
+
+
+a=len(longest_orf)#caculate length
+print('the largest ORF that can be generated from this sequence is',longest_orf)
+print('the length of this ORF is',a)

@@ -14,7 +14,7 @@ for gene in genes:
     gene_seq_parts=lines[1:]
     gene_seq=''.join(gene_seq_parts)
 #search for genes that meet requirements
-    requied_genes=re.findall(rf'ATG(?:...)+(?:{stop_code})',gene_seq)
+    requied_genes=re.findall(rf'ATG(?:...)+?(?:{stop_code})',gene_seq)
 #make filtering
     if not requied_genes:
         continue
@@ -27,10 +27,11 @@ for gene in genes:
         else:
             codon_count[codon] =1
 for c,n in codon_count.items():
-    print(c,n)       
+    print(f'the number of {c} codons is {n}')       
 import matplotlib.pyplot as plt
-plt.pie(codon_count.values(),labels=codon_count.keys(),autopct='%1.1f%%',startangle=90)
+plt.figure(figsize=(12,12))
+plt.pie(codon_count.values(),labels=codon_count.keys(),autopct='%1.1f%%',pctdistance=0.85,startangle=90)
 plt.axis('equal')
 plt.title(f'the distribution codons by genes contain the stop codon of {stop_code}')
-plt.savefig('codon_plot.png')
+plt.savefig(f'codon_plot of {stop_code}.png')
 plt.close()
