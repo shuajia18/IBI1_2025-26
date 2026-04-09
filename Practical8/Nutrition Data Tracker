@@ -1,0 +1,40 @@
+#define new class
+#make a new function that caculate the total
+#let the function reprot the total
+#report a warning if the individual has	consumed more than 2,500 calories or 90g fat.
+#make an example
+
+class food_item(object):
+    def __init__(self,name,calories,protein,carbohydrates,fat):
+        self.name= name
+        self.calories= calories
+        self.protein= protein
+        self.carbohydrates= carbohydrates
+        self.fat= fat  #define new class
+def track_nutrition(food_list):
+        total_calories=0.0
+        total_protein=0.0
+        total_carbohydrates=0.0
+        total_fat=0.0
+        for item in food_list:
+            total_calories +=item.calories
+            total_protein +=item.protein
+            total_carbohydrates +=item.carbohydrates
+            total_fat +=item.fat  #make a new function that caculate the total
+        print("--- 24-hour Nutrition Report ---")
+        print(f'Total calories: {total_calories} calories')
+        print(f'Total protein: {total_protein}g')
+        print(f'Total carbohydrates: {total_carbohydrates}g')
+        print(f'Total fat: {total_fat}g')   #let the function reprot the total
+
+        if total_calories >2500:
+            print('Warning: Calorie intake exceeds 2500 calories')
+        if total_fat >90:
+            print('Warning: Fat intake exceeds 90g')  #report a warning if the individual has consumed more than 2,500 calories or 90g fat.
+#give an example
+apple = food_item("apple", 60, 0.3, 15, 0.5)
+burger = food_item("burger", 600, 25, 40, 35)
+pizza = food_item("pizza", 2000, 80, 250, 70)
+
+my_meals=[apple,burger,pizza]
+track_nutrition(my_meals)       
