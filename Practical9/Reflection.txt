@@ -1,0 +1,3 @@
+I think this practical is a little difficult. I just know what processes i need to do, but do not know how to write codes about them, especially codes about drawing images. And sometimes i feel confused about indentation, which caused errors.
+I enjoy using the part of 2D spatial model. At this part, i can see the change of recovered and infected people. This visualziation process makes me feel a sense of accomplishment and the entire process becomes clearer.
+The most important thing i learned is how to use loops to simulate systems that evolve over time. And using randomly choosing functions, i truly realized what probabilistic model is.

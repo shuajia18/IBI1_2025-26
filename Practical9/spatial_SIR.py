@@ -1,0 +1,59 @@
+#import necessary libraries
+import numpy as np
+import matplotlib.pyplot as plt
+
+#make array of all susceptible population
+population= np.zeros((100,100))
+outbreak= np.random.choice(range(100),2)
+#set the initial infected people's location
+population[outbreak[0],outbreak[1]]= 1 
+
+#set up dimensions and resolution
+plt.figure(figsize=(6,4),dpi=150) 
+#define colors
+plt.imshow(population,cmap='viridis',interpolation='nearest')
+#show the image for 0 times
+plt.title('Time step:0')
+plt.show()
+
+#set sepcific parameter
+beta=0.3
+gamma=0.05
+
+#repeat for 100 times 
+#find population whose value is 1
+#get neighbour location of the infected
+#use random function to let the neighbour get infected randomly
+#use random function to let the infected get recovered randomly
+#draw and show image for 10,50 and 100 times
+
+#repeat for 100 times 
+for t in range(101): 
+
+    #acoording to the guidance of infection_snippet.py
+    # find infected points
+    infectedIndex = np.where(population==1)
+    # loop through all infected points
+    for i in range(len(infectedIndex[0])):
+        # get x, y coordinates for each point
+        x = infectedIndex[0][i]
+        y = infectedIndex[1][i]
+        # infect each neighbour with probability beta
+        # infect all 8 neighbours (this is a bit finicky, is there a better way?):
+        for xNeighbour in range(x-1,x+2):
+            for yNeighbour in range(y-1,y+2):
+                # don't infect yourself! (Is this strictly necessary?)
+                if (xNeighbour,yNeighbour) != (x,y):
+                    # make sure I don't fall off an edge
+                    if xNeighbour != -1 and yNeighbour != -1 and xNeighbour!=100 and yNeighbour!=100:
+                        # only infect neighbours that are not already infected!
+                        if population[xNeighbour,yNeighbour]==0:
+                            population[xNeighbour,yNeighbour]=np.random.choice(range(2),1,p=[1-beta,beta])[0]
+        #use random function to let the infected get recovered randomly
+        population[x,y]=np.random.choice([1,2],1,p=(1-gamma,gamma))[0]
+    #draw and show the image for specific times
+    if t in [10,50,100]:
+        plt.imshow(population,cmap='viridis',interpolation='nearest')
+        plt.title(f'Time step:{t}')
+        plt.show()
+    
