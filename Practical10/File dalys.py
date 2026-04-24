@@ -83,7 +83,8 @@ print(f'The largest DALYs is {largest_DALYs}, the corresponding country is {larg
 print(f'The smallest DALYs is {smallest_DALYs}, the corresponding country is {smallest_country}')
 
 Singapore = dalys_data.loc[dalys_data.Entity == 'Singapore']
-plt.plot(Singapore.Year,Singapore.DALYs,'bo') #b+ shows the image in blue and +, r+ shows the image in red and +, bo shows the image in blue and o
+plt.plot(Singapore.Year,Singapore.DALYs,'bo-') #b+ shows the image in blue and +, r+ shows the image in red and +, bo shows the image in blue and o
+#b/r indicates the colour, o/-/+ shows the shape
 plt.xticks(Singapore.Year,rotation=45) #tell system to show all the years,change the rotation angle and can show the xsticks clearer
 plt.xlabel('Year')
 plt.ylabel('The total DALYs')
