@@ -21,7 +21,8 @@ country=percent_change.keys()
 change_number=change_number
 width=0.35
 chart=plt.bar(country,change_number,width)
-plt.ylabel("chenge percent")
-plt.xlabel("country")
+plt.ylabel("Population Change (%)")
+plt.xlabel("Country")
+plt.title("Percentage Population Change (2020-2024)")
 
 plt.show()
