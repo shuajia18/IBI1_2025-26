@@ -27,9 +27,10 @@ else:
         
 
 import matplotlib.pyplot as plt
-labels={'low','normal','high'}
+labels=['low','normal','high']
 sizes=[low,normal,high]
 explode=(0.1,0,0)
 plt.pie(sizes,explode,labels,autopct='%1.1f%%',shadow=False,startangle=90)
+plt.title('Distribution of Patient Heart Rate Categories')
 plt.axis('equal')
 plt.show()
