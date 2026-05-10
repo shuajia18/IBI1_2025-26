@@ -14,7 +14,10 @@ for rate in vaccination_rates:
     I= 1 #define people who are infected
     R= V #redefine people who are recoverd
     S= N-I-R #redefine people who are susceptible
-    I_history=[I] #make teh list to track
+    if S<0: #list the rate 1.0 condition separately
+            S=0         
+            R=N
+    I_history=[I] #make the list to track
 #repeat for 1000 times
 #caculate probability of getting infected
 #determine who can get infected
@@ -24,11 +27,6 @@ for rate in vaccination_rates:
 #creat list to track 
     for t in range(1001): #repeat for 1000 times
         p_infected= b*(I/N) #caculate probability of getting infected
-        if S<0: #list the rate-1.0 condition separately
-            S=0
-            I=0
-            R=N
-            I_history=[I]
         infected= np.random.choice(range(2),size=S,p=[1-p_infected,p_infected]) #count 1 as infected
         new_infected= 0
         for people in infected:
