@@ -14,7 +14,7 @@ for gene in genes:
     gene_seq_parts=lines[1:]
     gene_seq=''.join(gene_seq_parts)
 #search for genes that meet requirements
-    requied_genes=re.findall(rf'ATG(?:...)+?(?:{stop_code})',gene_seq)
+    requied_genes=re.findall(rf'ATG(?:...)+(?:{stop_code})',gene_seq)
 #make filtering
     if not requied_genes:
         continue
