@@ -11,12 +11,13 @@ for i in range(len(seq)):
                 all_orf.append(orf)
 
 #find the longest
-longest_orf=all_orf[0]
-for orf in all_orf:
-    if len(orf)>len(longest_orf):
-        longest_orf=orf
-
-
-a=len(longest_orf)#caculate length
-print('the largest ORF that can be generated from this sequence is',longest_orf)
-print('the length of this ORF is',a)
+if all_orf:
+    longest_orf=all_orf[0]
+    for orf in all_orf:
+        if len(orf)>len(longest_orf):
+            longest_orf=orf
+    a=len(longest_orf)#caculate length
+    print('the largest ORF that can be generated from this sequence is',longest_orf)
+    print('the length of this ORF is',a)
+else:
+    print('No ORF found in the given sequence.')
