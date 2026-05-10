@@ -1,0 +1,12 @@
+In feedback about Week 3, professor said the issue is ‘Commit messages were not informative enough’. 
+Then i add something into Introductions.txt and commit it again. And i write commit message that 'add distributions about my age and hometown in Introductions.txt'
+In feedback about Week 4, one problem is i did not print the number of infected individuals every day, only the end value. 
+So i add a code "print(f'the number of infected students for Day n is {int(a)}')" to print the number every day and commit.
+Another problem about Week 4 is 'You didn't include a print statement for the clearance rate if the input is female, only male'. 
+Then i delete the code tp print the clearance rate for male and add a code "print(f"The creatinine clearance rate for {gender} is: {e}")" as a print statement for the clearance rate if the input is female or male.
+In feedback about Week 5, professor said that i did not print the dictionary.
+So i add "print(genes)" to print the dictionary of genes.
+The second problem about Week 5 is 'Your high and low labels are mixed up on the plot. Also a title can be useful for a plot.'
+Then i changed the code "labels={'low','normal','high'}" to "labels=['low','normal','high']" to prevent mixing up. And add plt.title('Distribution of Patient Heart Rate Categories') to add a title.
+The third suggestion for Week 5 is "Your plot would have benefited from a title, and the unit on the y axis –  e.g. Population change (%)"
+So i add the code "plt.ylabel("Population Change (%)")" to give unit on the y axis. And add plt.title("Percentage Population Change (2020-2024)") to give image a title.
