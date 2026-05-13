@@ -1,0 +1,15 @@
+The length of DLX5 protein is 289. It mainly is expressed in osteoblasts and chondrocytes.
+In reported results, the range of percentage identities is from 84.5% to 100%.
+The number of the same amino acids between human and mouse is 279
+The percentage identity between human and mouse is 96.53979238754326%
+The alignment score of human and mouse is 1490
+The normalized alignment score of human and mouse is 0.9662775616083009
+The number of the same amino acids between human and random seq is 16
+The percentage identity between human and random seq is 5.536332179930795%
+The alignment score of human and random seq is -253
+The normalized alignment score of human and random seq is -0.16407263294422827
+The number of the same amino acids between mouse and random seq is 15
+The percentage identity between mouse and random seq is 5.190311418685121%
+The alignment score of mouse and random seq is -261
+The normalized alignment score of mouse and random seq is -0.16893203883495145
+The sequence between DLX5_mouse and DLX5_human are most closely related.
